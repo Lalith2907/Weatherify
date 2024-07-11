@@ -1,18 +1,21 @@
-.bg {
-    background-color: rgb(78, 162, 247);
+body {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
-    margin-top: -200px;
-    height: 300px;
-    width: 500px;
-    background-color: rgba(173, 216, 230, 0.5);
+    margin-top: -125px;
+    height: 350px;
+    width: 600px;
+    background-color: rgba(240, 240, 240, 0.5);
     padding: 20px;
-    backdrop-filter: blur(10px);
     border-radius: 10px;
 }
 
@@ -26,24 +29,16 @@
     font-size: 32px;
     padding: 10px;
     border-radius: 10px;
-    border: 3px solid rgb(59, 82, 198);
+    border: none;
     outline: none;
-}
-
-.text:focus {
-    border: 3px solid rgb(59, 82, 198);
 }
 
 .submit {
     margin-left: 10px;
     border-radius: 10px;
     font-size: 41px;
-    border: 3px solid rgb(59, 82, 198);
+    border: none;
     background-color: white;
+    color: rgb(112, 163, 252);
     cursor: pointer;
-    transition: opacity 0.15s;
-}
-
-.submit:hover {
-    opacity: 0.7;
 }
