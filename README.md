@@ -5,6 +5,8 @@ Weatherify is my first Python web application, built using Flask. It allows user
 **Landing Page of Weatherify**
 ![image](https://github.com/user-attachments/assets/1c5525bf-7de7-4160-b0a1-f5c226c351ef)
 
+
+
 **Weather Display Page showing current weather**
 ![image](https://github.com/user-attachments/assets/44a83782-ce49-4a9a-8bb0-9ea158bfafe4)
 
