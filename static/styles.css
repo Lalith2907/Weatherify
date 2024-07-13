@@ -34,7 +34,7 @@ body {
     font-size: 24px;
     padding: 14px 20px;
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 30px;
     margin-bottom: 20px;
     outline: none;
     transition: border-color 0.3s ease;
@@ -50,7 +50,7 @@ body {
     font-size: 24px;
     padding: 14px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     background-color: #70a3fc;
     color: white;
     cursor: pointer;
@@ -70,7 +70,7 @@ body {
 .back-button {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     background-color: #70a3fc;
     color: white;
     text-decoration: none;
