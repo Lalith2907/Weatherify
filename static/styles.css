@@ -25,6 +25,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .text {
@@ -57,5 +58,26 @@ body {
 }
 
 .submit:hover {
+    background-color: #4c8fe8;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.back-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #70a3fc;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
     background-color: #4c8fe8;
 }
