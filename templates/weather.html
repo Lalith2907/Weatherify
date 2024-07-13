@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Weather</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather in {{ current.name }}</h1>
+        <p>Current Temperature: {{ temp_c }} °C / {{ temp_f | round(2) }} °F</p>
+        <p>Humidity: {{ current.main.humidity }}%</p>
+        <p>Wind Speed: {{ current.wind.speed }} m/s</p>
+
+        <div class="button-container">
+            <a href="/" class="back-button">Back to Search</a>
+        </div>
+    </div>
+</body>
+
+</html>
