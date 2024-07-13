@@ -1,1 +1,5 @@
 # Weatherify
+
+This project is my first Python web application, built using Flask. It allows users to check the current weather in any city by entering the city name in a search bar. The app fetches weather data from the OpenWeatherMap API, displaying the temperature in Celsius and Fahrenheit, along with humidity and wind speed. The user interface is simple and clean, featuring a responsive design with HTML and CSS. Overall, this project has helped me learn about web development, API integration, and how to create interactive applications.
+
+In the future, I plan to improve this project by implementing JavaScript to add an autocomplete feature for the city search. This will enhance user experience by suggesting city names as users type. Additionally, I want to include a 5-day weather forecast, allowing users to see upcoming weather patterns. Other potential features could include displaying weather icons, adding user location functionality, and providing detailed weather descriptions. These enhancements will make the app more interactive and informative, further enriching the overall experience.
