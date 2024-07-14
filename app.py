@@ -18,12 +18,18 @@ def weather():
         
         if response.status_code == 200:
             weather_data = response.json()
-            temp_c = weather_data['main']['temp']
-            temp_f = (temp_c * 9/5) + 32
+            
+            if 'main' in weather_data:
+                temp_c = weather_data['main']['temp']
+                temp_f = (temp_c * 9/5) + 32
 
-            return render_template('weather.html', current=weather_data, temp_c=temp_c, temp_f=temp_f)
+                return render_template('weather.html', current=weather_data, temp_c=temp_c, temp_f=temp_f)
+            else:
+                error_message = 'Please enter a valid city name.'
+                return render_template('layout.html', error=error_message)
+        
         else:
-            error_message = weather_data.get('message', 'Unknown error. Please try again later.')
+            error_message = 'Failed to fetch weather data. Please try again later.'
             return render_template('layout.html', error=error_message)
     
     return render_template('layout.html', error='Please enter a city.')
