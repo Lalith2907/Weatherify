@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weatherify</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
 
-    <body>
-        <header>
-            <a href="/" class="logo-link">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
-            </a>
-        </header>
-        <div class="container">
-            <div class="search">
-                <form action="/weather" method="GET">
-                    <input class="text" type="text" placeholder="Enter City" name="city" id="cityInput">
-                    <button type="submit" class="submit">Search</button>
-                </form>
-                {% if error %}
-                    <p class="error-message">{{ error }}</p>
-                {% endif %}
-            </div>
+<body {% if 'theme' in session and session['theme']=='light' %}class="light-mode" {% endif %}>
+    <header>
+        {% if 'theme' in session and session['theme'] == 'light' %}
+        <a href="/" class="logo-link">
+            <img src="{{ url_for('static', filename='dark_logo.png') }}" alt="Light Logo" class="logo">
+        </a>
+        {% else %}
+        <a href="/" class="logo-link">
+            <img src="{{ url_for('static', filename='light_logo.png') }}" alt="Dark Logo" class="logo">
+        </a>
+        {% endif %}
+        <div class="theme-switch-container">
+            <form action="/toggle-theme" method="POST" class="theme-switch-form">
+                <button type="submit" class="theme-switch-button">
+                    {% if 'theme' in session and session['theme'] == 'light' %}
+                    &#9728;
+                    {% else %}
+                    &#9790;
+                    {% endif %}
+                    <span class="tooltip">Switch Theme</span>
+                </button>
+            </form>
         </div>
-    </body>
+    </header>
+    <div class="container">
+        <div class="search">
+            <form action="/weather" method="GET">
+                <input class="text" type="text" placeholder="Enter City" name="city" id="cityInput">
+                <button type="submit" class="submit">Search</button>
+            </form>
+            {% if error %}
+            <p class="error-message">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
 
 </html>
