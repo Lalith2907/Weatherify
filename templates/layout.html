@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
     <head>
@@ -12,10 +11,20 @@
     </head>
 
     <body>
+        <header>
+            <a href="/" class="logo-link">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            </a>
+        </header>
         <div class="container">
             <div class="search">
-                <input class="text" type="text" placeholder="Enter City">
-                <button class="submit">Search</button>
+                <form action="/weather" method="GET">
+                    <input class="text" type="text" placeholder="Enter City" name="city" id="cityInput">
+                    <button type="submit" class="submit">Search</button>
+                </form>
+                {% if error %}
+                    <p class="error-message">{{ error }}</p>
+                {% endif %}
             </div>
         </div>
     </body>

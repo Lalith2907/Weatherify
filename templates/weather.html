@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Weather</title>
-    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>5-Day Weather Forecast</title>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    </head>
 
-<body>
-    <div class="container">
-        <h1>Weather in {{ current.name }}</h1>
-        <p>Current Temperature: {{ temp_c }} °C / {{ temp_f | round(2) }} °F</p>
-        <p>Humidity: {{ current.main.humidity }}%</p>
-        <p>Wind Speed: {{ current.wind.speed }} m/s</p>
+    <body>
+        <header>
+            <a href="/" class="logo-link">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            </a>
+        </header>
+
+        <div class="container">
+            <div class="current-weather">
+                <h1>Weather in {{ current.name }}</h1>
+                <p>Current Temperature: {{ temp_c }} °C / {{ temp_f | round(2) }} °F</p>
+                <p>Humidity: {{ current.main.humidity }}%</p>
+                <p>Wind Speed: {{ current.wind.speed }} m/s</p>
+            </div>
+        </div>
+
+        <div class="forecast-container">
+            <h1>Weekly Forecast</h1>
+            <div class="forecast">
+                {% for forecast in forecast_list %}
+                <div class="forecast-item">
+                    <p>Date: {{ forecast.date }}</p>
+                    <p>Temperature: {{ forecast.temp }} °C</p>
+                    <p>Description: {{ forecast.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
 
         <div class="button-container">
             <a href="/" class="back-button">Back to Search</a>
         </div>
-    </div>
-</body>
+    </body>
 
 </html>
