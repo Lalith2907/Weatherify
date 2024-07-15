@@ -1,18 +1,19 @@
 # Weatherify
 
-Weatherify is my first Python web application, built using Flask. It allows users to check the current weather in any city by entering the city name in a search bar. The app fetches weather data from the OpenWeatherMap API, displaying the temperature in Celsius and Fahrenheit, along with humidity and wind speed.
+Weatherify is a Python web application built using Flask that provides current weather information and forecasts for any city. By leveraging the OpenWeatherMap API, users can search for cities and view detailed weather data including temperature (in Celsius and Fahrenheit), humidity, and wind speed. The app also supports theme switching between light and dark modes.
 
-**Landing Page of Weatherify**
-![image](https://github.com/user-attachments/assets/7d9c5fa4-2e46-4801-8d69-47501ac0e5b8)
+**Features**
 
-**Weather Display Page showing current weather**
-![image](https://github.com/user-attachments/assets/0c35634c-b81e-48d0-866f-acf654af5968)
+- **Current Weather Information**: Displays current temperature, humidity, and wind speed for a specified city.
+- **Weekly Forecast**: Shows a 7-day forecast with temperature and weather descriptions for each day.
+- **Theme Switching**: Toggle between light and dark themes for improved user experience.
+- **Responsive Design**: The app is designed to be usable on both desktop and mobile devices.
 
 **Technologies Used**
-* Flask
-* OpenWeatherMap API
-* HTML
-* CSS
+* Flask: A lightweight web framework for Python.
+* OpenWeatherMap API: Provides weather data.
+* HTML: Structure of the web pages.
+* CSS: Styling of the web pages.
 
 **Future Enhancements**
 * Implement JavaScript for city search autocomplete feature.
