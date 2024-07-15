@@ -11,6 +11,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.light-mode body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
 header {
     width: 100%;
     padding: 20px;
@@ -21,7 +26,7 @@ header {
     background-color: #2b2b2b;
     z-index: 1000;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -36,9 +41,52 @@ header {
     color: inherit;
 }
 
+.theme-switch-container {
+    margin-right: 20px;
+}
+
+.theme-switch-button {
+    position: relative;
+    padding: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: inherit;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.theme-switch-button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+body.light-mode .theme-switch-button {
+    color: #333333;
+}
+
 .container {
     width: 90%;
-    width: 450px;
+    max-width: 450px;
     background-color: #2b2b2b;
     padding: 20px;
     border-radius: 10px;
@@ -111,6 +159,7 @@ header {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
 }
 
 .forecast-item p {
@@ -137,4 +186,45 @@ header {
 
 .back-button:hover {
     background-color: #1e90ff;
+}
+
+.light-mode {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.light-mode header {
+    background-color: #f0f0f0;
+}
+
+.light-mode .container {
+    background-color: #f0f0f0;
+}
+
+.light-mode .text {
+    border-color: #333333;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.light-mode .submit {
+    background-color: #1e90ff;
+}
+
+.light-mode .forecast-container {
+    background-color: #e0e0e0;
+}
+
+.light-mode .forecast-item {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+.light-mode .back-button {
+    background-color: #1e90ff;
+    color: white;
+}
+
+.light-mode .forecast-item p {
+    color: #333333;
 }
