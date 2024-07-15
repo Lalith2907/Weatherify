@@ -19,7 +19,6 @@ Weatherify is a Python web application built using Flask that provides current w
 
 **Future Enhancements**
 * Implement JavaScript for city search autocomplete feature.
-* Add 5-day weather forecast functionality.
 * Display weather icons for better visual representation.
-* Include user location detection to provide local weather.
-* Provide detailed weather descriptions (e.g., cloudy, sunny).
+* Add functionality to detect and display weather based on the user's current location using geolocation APIs.
+* Provide extended weather forecasts beyond 7 days, including hourly forecasts and severe weather alerts.
